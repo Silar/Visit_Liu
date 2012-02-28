@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:background="#232323" android:layout_weight="1">
+		<SurfaceView android:id="@+id/auto_surfaceView1"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:paddingLeft="10px" android:paddingTop="10px"
+			android:paddingRight="10px" android:paddingBottom="10px" />
+	</LinearLayout>
+
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:background="#E2DCD7" android:layout_weight="2.3">
+	</LinearLayout>
+
+</LinearLayout>

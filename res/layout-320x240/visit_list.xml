@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:background="@drawable/bg1">
+  
+  <RelativeLayout
+  android:layout_weight="3.6" 
+  android:id="@+id/relat"
+  android:layout_gravity="top"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  <Button
+  android:id="@+id/vl_b1"
+  android:background="@drawable/return_opposite"
+  android:layout_marginLeft="25px"
+  android:layout_marginTop="4px"
+  android:layout_width="50dip"
+  android:layout_height="40dip"></Button>
+  <TextView 
+  android:text="我的游记"
+  android:textSize="28sp"
+  android:textColor="#343434"
+  android:layout_marginTop="8px"
+  android:layout_centerInParent="true"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"/>
+  </RelativeLayout>
+  
+  <LinearLayout 
+   android:layout_weight="1.4"
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent">
+  <ListView 
+   android:layout_marginTop="5px"
+  android:layout_marginLeft="15px"
+  android:cacheColorHint="#ffffffff"
+  android:layout_below="@id/relat"
+  android:id="@+id/vl_list"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  </ListView>
+  </LinearLayout>
+  
+  <RelativeLayout 
+  android:layout_weight="3.1" 
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  <Button 
+  android:layout_centerInParent="true"
+  android:layout_height="50dip"
+  android:layout_width="fill_parent"
+  android:id="@+id/vl_b2"  
+  android:background="@drawable/button_main"
+  android:text="开始新旅行"
+  android:textSize="28sp"
+  android:textColor="#9D9DA3"
+  android:gravity="center"
+  android:drawableLeft="@drawable/addm"
+  android:layout_marginLeft="28px"
+  android:layout_marginRight="28px"
+  android:paddingLeft="10px"
+  android:paddingRight="10px"></Button>
+</RelativeLayout>
+ </LinearLayout>

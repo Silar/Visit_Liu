@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:background="@drawable/bg4m">
+  
+  <RelativeLayout 
+  android:layout_weight="4.0"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  </RelativeLayout>
+  
+    <LinearLayout 
+    android:layout_weight="4.4"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <ImageView 
+    android:layout_marginLeft="5px"
+    android:layout_marginRight="5px"
+    android:layout_gravity="center"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ver_line"/>
+    </LinearLayout>
+  
+  <RelativeLayout  
+  android:layout_weight="3.0"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  <Button 
+  android:background="@drawable/button_main"
+  android:text="继续本次旅行"
+  android:drawableLeft="@drawable/playm"
+  android:layout_marginLeft="28px"
+  android:layout_marginRight="28px"
+  android:paddingLeft="10px"
+  android:paddingRight="10px"
+  android:textSize="30sp"
+  android:textColor="#9D9DA3"
+  android:id="@+id/main_b1" 
+  android:layout_width="fill_parent" 
+  android:layout_height="55dip"
+  android:gravity="center"
+  android:layout_centerInParent="true"></Button>
+  <TextView 
+  android:id="@+id/main_tv1"
+  android:layout_below="@id/main_b1"
+  android:textSize="32sp"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:gravity="center"/>
+  </RelativeLayout >
+  
+  
+  <LinearLayout 
+    android:layout_weight="4.4"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <ImageView 
+    android:layout_marginLeft="5px"
+    android:layout_marginRight="5px"
+    android:layout_gravity="center"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ver_line"/></LinearLayout>
+  
+  <RelativeLayout 
+  android:layout_weight="3.5"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  <Button 
+  android:background="@drawable/button_main"
+  android:text="管理游记" 
+  android:layout_marginLeft="28px"
+  android:layout_marginRight="28px"
+  android:paddingLeft="10px"
+  android:paddingRight="10px"
+  android:drawableLeft="@drawable/editm"
+  android:textSize="30sp"
+  android:textColor="#9D9DA3"
+  android:id="@+id/main_b2" 
+  android:layout_width="fill_parent" 
+  android:layout_height="55dip"
+  android:gravity="center"
+  android:layout_centerInParent="true"></Button>
+  </RelativeLayout>
+  
+  
+  <LinearLayout 
+  android:layout_weight="3.5"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  <Button 
+  android:background="@drawable/button_main"
+  android:text="开始新旅行" 
+  android:textColor="#9D9DA3"
+  android:layout_marginLeft="28px"
+  android:layout_marginRight="28px"
+  android:paddingLeft="10px"
+  android:paddingRight="10px"
+  android:drawableLeft="@drawable/addm"
+  android:textSize="30sp"
+  android:id="@+id/main_b3" 
+  android:layout_width="fill_parent" 
+  android:layout_height="55dip"></Button>
+  </LinearLayout>
+    
+</LinearLayout>
