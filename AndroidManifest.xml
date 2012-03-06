@@ -3,25 +3,38 @@
 	package="com.visit" android:versionCode="1" android:versionName="1.0">
 	<uses-sdk android:minSdkVersion="7" />
 
-	<application android:icon="@drawable/logo" android:label="@string/app_name">
+	<application android:icon="@drawable/logo9" android:label="@string/app_name">
+
 		<activity android:name=".YouTu" android:label="@string/app_name"
+			android:theme="@android:style/Theme.NoTitleBar"
 			android:screenOrientation="portrait">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:name=".Main" android:screenOrientation="portrait"></activity>
-		<activity android:name=".mCamera" android:screenOrientation="portrait"></activity>
-		<activity android:name=".Photo_Message" android:screenOrientation="portrait"></activity>
-		<activity android:name=".Visit_Manage" android:screenOrientation="portrait"></activity>
-		<activity android:name=".New_Visit" android:screenOrientation="portrait"></activity>
-		<activity android:name=".New_Visit_First" android:screenOrientation="portrait"></activity>
-		<activity android:name=".Begin_Visit" android:screenOrientation="portrait"></activity>
-		<activity android:name=".Photo_List" android:screenOrientation="portrait"></activity>
-		<activity android:name=".Visit_List" android:screenOrientation="portrait"></activity>
-		<activity android:name=".You_Main" android:screenOrientation="portrait"></activity>
-		<activity android:name=".Map_Photo" android:screenOrientation="portrait"></activity>
+		<activity android:name=".Main" android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar"></activity>
+		<activity android:name=".mCamera" android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar"></activity>
+		<activity android:name=".Photo_Message"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"></activity>
+		<activity android:name=".Visit_Manage"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"></activity>
+		<activity android:name=".New_Visit"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"></activity>
+		<activity android:name=".New_Visit_First"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"></activity>
+		<activity android:name=".Begin_Visit"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"></activity>
+		<activity android:name=".Photo_List"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"></activity>
+		<activity android:name=".Visit_List"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"></activity>
+		<activity android:name=".You_Main" android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar"></activity>
+		<activity android:name=".Map_Photo"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"></activity>
 	</application>
 
 
@@ -34,7 +47,9 @@
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.RESTART_PACKAGES" />
 
-	<uses-feature android:name="android.hardware.camera" />
-	<uses-feature android:name="android.hardware.camera.autofocus" />
-	
+	<supports-screens android:smallScreens="true"
+		android:normalScreens="true" android:largeScreens="true"
+		android:anyDensity="true" />
+
+
 </manifest>

@@ -10,10 +10,10 @@
     android:paddingRight="12dip">  
 <ImageView   
     android:paddingTop="12dip"  
-    android:background="#343434"
+    android:background="@drawable/bs_grid_bkg"
     android:layout_alignParentLeft="true"  
-    android:layout_width="90dip"   
-    android:layout_height="60dip"   
+    android:layout_width="wrap_content"   
+    android:layout_height="wrap_content"   
     android:id="@+id/ItemImage"  
     android:scaleType="centerInside"/>   
 <TextView
@@ -21,7 +21,7 @@
     android:layout_toRightOf="@id/ItemImage"  
     android:layout_marginLeft="10px" 
     android:text="TextView01"  
-    android:textSize="14sp" 
+    android:textSize="20sp" 
     android:textColor="#343434" 
     android:layout_height="wrap_content"   
     android:layout_width="fill_parent"   
@@ -29,7 +29,7 @@
     />  
 <TextView   
     android:text="TextView02"  
-    android:textSize="11sp"
+    android:textSize="15sp"
     android:textColor="#343434" 
     android:layout_height="wrap_content"   
     android:layout_width="wrap_content" 

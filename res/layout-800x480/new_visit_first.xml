@@ -107,8 +107,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <ImageView 
-    android:layout_marginLeft="5px"
-    android:layout_marginRight="5px"
+    android:layout_marginLeft="30px"
+    android:layout_marginRight="30px"
     android:layout_gravity="center"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
@@ -116,7 +116,7 @@
     </LinearLayout>
     
     <LinearLayout 
-    android:layout_weight="1.6"
+    android:layout_weight="1.5"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <TextView 

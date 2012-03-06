@@ -24,12 +24,12 @@ import android.view.View;
 import android.view.View.OnCreateContextMenuListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.SimpleAdapter.ViewBinder;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
+import android.widget.SimpleAdapter.ViewBinder;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,7 +44,8 @@ import android.widget.Toast;
 public class Visit_List extends Activity {
 
 	private Button vl_b1, vl_b2;
-	ListView list;
+	GridView grid;
+	Bitmap bt;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,7 @@ public class Visit_List extends Activity {
 
 		vl_b1 = (Button) findViewById(R.id.vl_b1);
 		vl_b2 = (Button) findViewById(R.id.vl_b2);
-		list = (ListView) findViewById(R.id.vl_list);
+		grid = (GridView) findViewById(R.id.vl_gridview);
 
 		// 返回Main主页面
 		vl_b1.setOnClickListener(new View.OnClickListener() {
@@ -140,22 +141,42 @@ public class Visit_List extends Activity {
 						Pcount++;
 					}
 
-					// 获取相片文件夹的最新拍摄的一张照片
-					String visit = "Album";
-					SharedPreferences sp = getSharedPreferences(visit, 0);
-					String vn = sp.getString(mCurrentFile.getName(), "");
+					String vn = null;
+					if (flist.length > 0) {
+						File f1 = flist[0];
+						vn = f1.getName().toString();
+					}
 
-					// 将文件地址直接转码成bitmap.
-					Bitmap bt = BitmapFactory.decodeFile("sdcard/YouTu/"
-							+ mCurrentFile.getName().toString() + "/" + vn
-							+ ".JPEG");
-					Log.d("Visit_List", vn);
+					// // 获取相片文件夹的最新拍摄的一张照片的名字
+					// String visit = "Album";
+					// SharedPreferences sp = getSharedPreferences(visit, 0);
+					// String vn = sp.getString(mCurrentFile.getName(), "");
+
+					/*
+					 * 利用BitmapFactory.Options.inSampleSize方法将文件地址直接转码成bitmap.
+					 * 防止bitmap size exceeds VM budget的发生
+					 */
+					BitmapFactory.Options opts = new BitmapFactory.Options();
+					opts.inJustDecodeBounds = true;
+					BitmapFactory.decodeFile("sdcard/YouTu/"
+							+ mCurrentFile.getName().toString() + "/" + vn,
+							opts);
+
+					opts.inSampleSize = computeSampleSize(opts, -1, 1280 * 960);
+					opts.inJustDecodeBounds = false;
+
+					try {
+						bt = BitmapFactory.decodeFile("sdcard/YouTu/"
+								+ mCurrentFile.getName().toString() + "/" + vn,
+								opts);
+					} catch (OutOfMemoryError err) {
+					}
 
 					HashMap<String, Object> map = new HashMap<String, Object>();
 					if (bt != null) {
 						map.put("ItemImage", bt);
 					} else {
-						map.put("ItemImage", R.drawable.logo);
+						map.put("ItemImage", R.drawable.logo9);
 					}
 					map.put("ItemTitle", mCurrentFile.getName() + "(" + Pcount
 							+ ")");
@@ -192,10 +213,10 @@ public class Visit_List extends Activity {
 			});
 
 			// 添加并且显示
-			list.setAdapter(listItemAdapter);
+			grid.setAdapter(listItemAdapter);
 
 			// 添加点击，进入对应相册进行图片浏览.
-			list.setOnItemClickListener(new OnItemClickListener() {
+			grid.setOnItemClickListener(new OnItemClickListener() {
 				@Override
 				public void onItemClick(AdapterView<?> parent, View view,
 						int position, long id) {
@@ -227,7 +248,7 @@ public class Visit_List extends Activity {
 			});
 
 			// 长按显示是否删除游记
-			list.setOnCreateContextMenuListener(new OnCreateContextMenuListener() {
+			grid.setOnCreateContextMenuListener(new OnCreateContextMenuListener() {
 
 				@Override
 				public void onCreateContextMenu(ContextMenu menu, View v,
@@ -237,10 +258,6 @@ public class Visit_List extends Activity {
 					// AdapterView.AdapterContextMenuInfo来获取单元的信息。
 					final AdapterView.AdapterContextMenuInfo Linfo = (AdapterView.AdapterContextMenuInfo) menuInfo;
 					new AlertDialog.Builder(Visit_List.this)
-
-							.setTitle("删除游记")
-
-							.setIcon(R.drawable.icon)
 
 							.setMessage("确定删除该游记？")
 							.setPositiveButton("是",
@@ -426,6 +443,49 @@ public class Visit_List extends Activity {
 				delAllFile(path + "/" + tempList[i]);// 先删除文件夹里面的文件
 				delFolder(path + "/" + tempList[i]);// 再删除空文件夹
 			}
+		}
+	}
+
+	// 动态计算恰当的inSampleSize方法.
+	public static int computeSampleSize(BitmapFactory.Options options,
+			int minSideLength, int maxNumOfPixels) {
+		int initialSize = computeInitialSampleSize(options, minSideLength,
+				maxNumOfPixels);
+
+		int roundedSize;
+		if (initialSize <= 8) {
+			roundedSize = 1;
+			while (roundedSize < initialSize) {
+				roundedSize <<= 1;
+			}
+		} else {
+			roundedSize = (initialSize + 7) / 8 * 8;
+		}
+
+		return roundedSize;
+	}
+
+	private static int computeInitialSampleSize(BitmapFactory.Options options,
+			int minSideLength, int maxNumOfPixels) {
+		double w = options.outWidth;
+		double h = options.outHeight;
+
+		int lowerBound = (maxNumOfPixels == -1) ? 1 : (int) Math.ceil(Math
+				.sqrt(w * h / maxNumOfPixels));
+		int upperBound = (minSideLength == -1) ? 128 : (int) Math.min(
+				Math.floor(w / minSideLength), Math.floor(h / minSideLength));
+
+		if (upperBound < lowerBound) {
+			// return the larger one when there is no overlapping zone.
+			return lowerBound;
+		}
+
+		if ((maxNumOfPixels == -1) && (minSideLength == -1)) {
+			return 1;
+		} else if (minSideLength == -1) {
+			return lowerBound;
+		} else {
+			return upperBound;
 		}
 	}
 
