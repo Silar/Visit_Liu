@@ -117,12 +117,5 @@
     android:inputType="textMultiLine" 
  	android:maxLines="2">
     </EditText>
-    <Button 
-    android:layout_marginLeft="30px"
-    android:layout_below="@id/pm_et2"
-    android:text="推荐位置" 
-    android:id="@+id/pm_b1" 
-    android:layout_width="wrap_content" 
-    android:layout_height="wrap_content"></Button>
     </RelativeLayout>
 </LinearLayout>

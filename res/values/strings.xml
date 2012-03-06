@@ -2,4 +2,7 @@
 <resources>
     <string name="hello">Hello World, VisitActivity!</string>
     <string name="app_name">游图</string>
+    <string name="about1">游图v1.0</string>
+    <string name="about2">Copyright@2012 玩客实验室</string>
+    <string name="about3">邮箱:simpleliu91@gmail.com</string>
 </resources>
