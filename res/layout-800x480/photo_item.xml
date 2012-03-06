@@ -9,7 +9,6 @@
     android:paddingLeft="12dip"  
     android:paddingRight="12dip">  
 <ImageView   
-    android:paddingTop="12dip"  
     android:background="#343434"
     android:layout_alignParentLeft="true"  
     android:layout_width="90dip"   
