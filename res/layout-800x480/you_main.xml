@@ -15,7 +15,9 @@
   <RelativeLayout 
   android:layout_weight="1.3"
   android:layout_width="fill_parent"
-  android:layout_height="fill_parent">
+  android:layout_height="fill_parent"
+  android:layout_marginLeft="30px"
+  android:layout_marginRight="30px">
   
   <ImageView 
   android:layout_alignParentRight="true"
@@ -39,8 +41,8 @@
   android:textColor="#9D9DA3"
   android:layout_marginLeft="30px"
   android:layout_marginRight="30px"
-  android:paddingLeft="26px"
-  android:paddingRight="26px"
+  android:paddingLeft="25px"
+  android:paddingRight="25px"
   android:drawableLeft="@drawable/add"
   android:layout_width="fill_parent" 
   android:layout_height="60dip"

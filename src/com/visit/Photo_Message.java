@@ -12,7 +12,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -42,10 +41,7 @@ public class Photo_Message extends Activity {
 		setContentView(R.layout.photo_message);
 		MyApplication.getInstance().addActivity(this);
 
-		pm_tv2 = (TextView) findViewById(R.id.pm_tv2);
-		pm_tv3 = (TextView) findViewById(R.id.pm_tv3);
 		pm_et1 = (EditText) findViewById(R.id.pm_et1);
-		pm_et2 = (EditText) findViewById(R.id.pm_et2);
 		pm_b2 = (Button) findViewById(R.id.pm_b2);
 		pm_b3 = (Button) findViewById(R.id.pm_b3);
 		pm_iv1 = (ImageView) findViewById(R.id.pm_iv1);
@@ -68,17 +64,17 @@ public class Photo_Message extends Activity {
 
 		Log.d("bitmapfile", bt.toString());
 
-		// 将照片旋转90度
-		int width = bt.getWidth();
-		int height = bt.getHeight();
+//		// 将照片旋转90度
+//		int width = bt.getWidth();
+//		int height = bt.getHeight();
+//
+//		Matrix matrix = new Matrix();
+//		matrix.postRotate(90);
+//
+//		final Bitmap newbt = Bitmap.createBitmap(bt, 0, 0, width, height,
+//				matrix, true);
 
-		Matrix matrix = new Matrix();
-		matrix.postRotate(90);
-
-		final Bitmap newbt = Bitmap.createBitmap(bt, 0, 0, width, height,
-				matrix, true);
-
-		pm_iv1.setImageBitmap(newbt);
+		pm_iv1.setImageBitmap(bt);
 
 		// 返回主页面
 		pm_b2.setOnClickListener(new View.OnClickListener() {
@@ -207,7 +203,7 @@ public class Photo_Message extends Activity {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				newbt.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
+				bt.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
 
 				// 跳转到相片列表页面
 				Intent pm_intent3 = new Intent();

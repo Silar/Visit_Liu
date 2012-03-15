@@ -6,14 +6,14 @@
   android:layout_height="fill_parent"
   android:background="@drawable/bg1">
     <RelativeLayout 
-    android:layout_weight="3.6"
+    android:layout_weight="3.65"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <Button 
     android:background="@drawable/return_opposite"
     android:id="@+id/bv_b1" 
     android:layout_marginLeft="30px"
-    android:layout_marginTop="20px"
+    android:layout_marginTop="25px"
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content"></Button>
     <ImageView 
@@ -26,7 +26,7 @@
     android:layout_alignParentRight="true"
     android:background="@drawable/home"
     android:layout_marginRight="30px"
-    android:layout_marginTop="20px"
+    android:layout_marginTop="25px"
     android:id="@+id/bv_b2" 
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content"></Button>
@@ -80,14 +80,14 @@
   android:id="@+id/bv_b3"  
   android:background="@drawable/button_main"
   android:text="拍一张"
-  android:textSize="32sp"
+  android:textSize="30sp"
   android:textColor="#9D9DA3"
   android:gravity="center"
   android:drawableLeft="@drawable/add"
-  android:layout_marginLeft="35px"
-  android:layout_marginRight="35px"
-  android:paddingLeft="30px"
-  android:paddingRight="30px"></Button>
+  android:layout_marginLeft="30px"
+  android:layout_marginRight="30px"
+  android:paddingLeft="25px"
+  android:paddingRight="25px"></Button>
     
     </RelativeLayout>
     

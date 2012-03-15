@@ -4,30 +4,20 @@
   android:orientation="vertical"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
-  android:background="@drawable/bg5">
+  android:background="@drawable/bg_vf">
     <LinearLayout
     android:layout_height="fill_parent"
     android:layout_width="fill_parent"
     android:layout_weight="2.3">
-    <TextView 
-    android:layout_marginTop="16px"
-    android:text="创建新游记" 
-    android:textSize="28sp"
-    android:textColor="#686664"
-    android:id="@+id/nvf_tv1" 
-    android:gravity="center_horizontal"
-    android:layout_centerHorizontal="true"
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content"></TextView>
     </LinearLayout>
     
     <LinearLayout 
-    android:layout_weight="2.5"
+    android:layout_weight="2.55"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <ImageView 
-    android:layout_marginLeft="5px"
-    android:layout_marginRight="5px"
+    android:layout_marginLeft="25px"
+    android:layout_marginRight="25px"
     android:layout_gravity="center"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
@@ -41,9 +31,9 @@
     android:layout_weight="1.6">
     <TextView 
     android:layout_marginTop="10px"
-    android:layout_marginLeft="10px"
+    android:layout_marginLeft="25px"
     android:text="游记名称:" 
-    android:textSize="15sp"
+    android:textSize="18sp"
     android:textColor="#686664"
     android:id="@+id/nvf_tv2" 
     android:layout_width="wrap_content" 
@@ -56,12 +46,12 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"/>
     <TextView 
-    android:layout_marginLeft="10px"
+    android:layout_marginLeft="25px"
     android:layout_marginTop="10px"
     android:layout_below="@id/nvf_et1"
     android:id="@+id/nv_tv3"
     android:text="游记描述:"
-    android:textSize="15sp"
+    android:textSize="18sp"
     android:textColor="#686664"
     android:layout_height="wrap_content"
     android:layout_width="wrap_content"/>
@@ -79,26 +69,26 @@
     <Button 
     android:layout_marginTop="10px"
     android:text="确定" 
-    android:textSize="15sp"
+    android:textSize="20sp"
     android:textColor="#CFBCBC"
-    android:background="@drawable/button_small"
+    android:background="@drawable/meb"
     android:id="@+id/nvf_b1" 
     android:layout_below="@id/nvf_et2"
     android:layout_centerInParent="true"
-    android:layout_width="wrap_content" 
-    android:layout_height="wrap_content"></Button>
+    android:layout_width="110px" 
+    android:layout_height="70px"></Button>
     <Button 
     android:layout_marginTop="10px"
     android:text="取消" 
-    android:textSize="15sp"
+    android:textSize="20sp"
     android:textColor="#CFBCBC"
-    android:background="@drawable/button_small"
+    android:background="@drawable/meb"
     android:id="@+id/nvf_b2" 
     android:layout_alignParentRight="true"
     android:layout_below="@id/nvf_et2"
     android:layout_marginRight="40px"
-    android:layout_width="wrap_content" 
-    android:layout_height="wrap_content"></Button>
+    android:layout_width="110px" 
+    android:layout_height="70px"></Button>
     </RelativeLayout>
      
      
@@ -107,8 +97,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <ImageView 
-    android:layout_marginLeft="30px"
-    android:layout_marginRight="30px"
+    android:layout_marginLeft="5px"
+    android:layout_marginRight="5px"
     android:layout_gravity="center"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
@@ -121,7 +111,7 @@
     android:layout_height="fill_parent">
     <TextView 
     android:text="您暂时还没有游记哦！"
-    android:textSize="20sp"
+    android:textSize="25sp"
     android:textColor="#686664"
     android:gravity="center"
     android:layout_height="wrap_content"

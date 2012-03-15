@@ -22,7 +22,7 @@
   <TextView 
   android:id="@+id/pl_tv1"
   android:text="游记相片"
-  android:textSize="30sp"
+  android:textSize="22sp"
   android:textColor="#343434"
   android:layout_centerInParent="true"
   android:layout_width="wrap_content"

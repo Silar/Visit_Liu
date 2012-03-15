@@ -70,7 +70,7 @@
     <Button 
     android:layout_marginTop="10px"
     android:text="确定" 
-    android:textSize="18sp"
+    android:textSize="20sp"
     android:textColor="#CFBCBC"
     android:background="@drawable/meb"
     android:id="@+id/nvf_b1" 
@@ -81,7 +81,7 @@
     <Button 
     android:layout_marginTop="10px"
     android:text="取消" 
-    android:textSize="18sp"
+    android:textSize="20sp"
     android:textColor="#CFBCBC"
     android:background="@drawable/meb"
     android:id="@+id/nvf_b2" 
